@@ -1,2 +1,75 @@
-# Basic-filtering-in-MySQL
-Performed filtering techniques in MySQL
+#  FILTERING TABLES
+
+USE deff;
+
+SELECT *
+FROM employees;
+
+# CREATING A TABLE CALLED SALARY
+
+CREATE TABLE salary (
+	  employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    amount DECIMAL(10, 2)
+);
+
+SELECT *
+FROM salary;
+
+INSERT INTO salary (amount)
+VALUES	(23000),
+		    (14000),
+        (21000),
+        (17000);
+        
+# SALARY ABOVE 16000
+SELECT *
+FROM salary
+WHERE amount > 16000;
+
+# SALARY ABOVE 20000
+SELECT *
+FROM salary
+WHERE amount > 20000;
+
+# SALARY BELOW 20000
+SELECT *
+FROM salary
+WHERE amount < 20000;
+
+# GET THE NAMES OF EMPLOYEES WHO ARE MALE;
+SELECT *
+FROM employees;
+
+SELECT *
+FROM employees
+WHERE gender = "male";
+
+# GET THE NAMES OF EMPLOYEES WHO ARE FEMALE;
+SELECT *
+FROM employees
+WHERE gender = "female";
+
+# USING THE LIKE OPERATOR;
+
+# GET NAMES OF THOSE WITH THEIR FIRST NAME STARTING WITH LETTER "U"
+SELECT *
+FROM employees
+WHERE first_name LIKE "U%";
+
+
+# GET NAMES OF THOSE WITH THEIR FIRST NAME STARTING WITH LETTER "S"
+SELECT *
+FROM employees
+WHERE first_name LIKE "S%";
+
+
+# GET NAMES OF THOSE WITH THEIR LAST NAME HAVING "J" LETTER;
+SELECT *
+FROM employees
+WHERE last_name LIKE "%j%";
+
+
+# GET THE NAMES OF EMPLOYEES WITH THEIR LAST NAME ENDS WITH "H"
+SELECT *
+FROM employees
+WHERE last_name LIKE "%h";
